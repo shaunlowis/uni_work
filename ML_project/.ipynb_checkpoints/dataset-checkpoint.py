@@ -3,7 +3,6 @@ from PIL import Image
 from torch.utils.data import Dataset
 import numpy as np
 import matplotlib.pyplot as plt
-from pathlib import Path
 
 
 def open_im(img):
@@ -27,11 +26,10 @@ def split_im(im, base_dir):
 
 
 def main():
-    im_dir = r'D:\python\uni_work\ML_project\data_raw\lds-new-zealand-4layers-GTiff\nz-10m-satellite-imagery-2017'
-    im_path = Path(im_dir) / 'nz-10m-satellite-imagery-2017.tif'
+    im_path = r'D:\python\uni_work\ML_project\data_raw\lds-new-zealand-4layers-GTiff\nz-10m-satellite-imagery-2017\nz-10m-satellite-imagery-2017.tif'
     split_dir = r'D:\python\uni_work\ML_project\data_split'
     im = open_im(im_path)
-    curr_year_fp = Path(split_dir) / '2017'
+    curr_year_fp = os.path.join(split_dir, '2017')
     print(curr_year_fp)
 
     if os.path.exists(curr_year_fp):

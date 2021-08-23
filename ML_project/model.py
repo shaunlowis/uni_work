@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torchvision.transforms.functional as tf
 
+# This is a custom implementation of the UNET model.
 # It is important to choose an input that is divisible by 16.
 # The code does account for non divisible inputs, but may result in errors.
 
