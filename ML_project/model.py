@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 import torchvision.transforms.functional as tf
+import os
+os.environ[r'C:\ProgramData\Miniconda3\Library\bin']
 
 # This is a custom implementation of the UNET model.
 # It is important to choose an input that is divisible by 16.
