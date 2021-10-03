@@ -76,7 +76,7 @@ def check_accuracy(loader, model, device="cuda"):
 
 
 def save_predictions_as_imgs(
-    loader, model, folder=r'D:\python\uni_work\ML_project\output\predictions', device="cuda"
+    loader, model, folder=r'/home/shaun/python/uni_work/ML_project/output/predictions', device="cuda"
 ):
     model.eval()
     for idx, (x, y) in enumerate(loader):

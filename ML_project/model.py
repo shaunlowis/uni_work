@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torchvision.transforms.functional as tf
 import os
-os.environ[r'C:\ProgramData\Miniconda3\Library\bin']
+# os.environ[r'C:\ProgramData\Miniconda3\Library\bin']
 
 # This is a custom implementation of the UNET model.
 # It is important to choose an input that is divisible by 16.
@@ -81,14 +81,18 @@ class UNET(nn.Module):
         return self.final_conv(x)
 
 
-def test():
-    x = torch.randn((3, 1, 160, 160))
-    model = UNET(in_channels=1, out_channels=1)
-    preds = model(x)
-    print(preds.shape)
-    print(x.shape)
-    assert preds.shape == x.shape
+# def test():
+#     x = torch.randn((3, 1, 160, 160))
+#     model = UNET(in_channels=1, out_channels=1)
+#     preds = model(x)
+#     print(preds.shape)
+#     print(x.shape)
+#     assert preds.shape == x.shape
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # Here the test returns the same size as the input, thereby passing.
-    test()
+    # test()
+
+    # Returns:
+    # torch.Size([3, 1, 160, 160])
+    # torch.Size([3, 1, 160, 160])

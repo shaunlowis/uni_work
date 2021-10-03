@@ -25,10 +25,10 @@ IMAGE_HEIGHT = 512
 IMAGE_WIDTH = 512
 PIN_MEMORY = True
 LOAD_MODEL = True
-TRAIN_IMG_DIR = r'D:\python\uni_work\ML_project\input\truth'
-TRAIN_MASK_DIR = r'D:\python\uni_work\ML_project\input\mask'
-VAL_IMG_DIR = r'D:\python\uni_work\ML_project\input\val_truth'
-VAL_MASK_DIR = r'D:\python\uni_work\ML_project\input\val_mask'
+TRAIN_IMG_DIR = r'/home/shaun/python/uni_work/ML_project/input/truth'
+TRAIN_MASK_DIR = r'/home/shaun/python/uni_work/ML_project/input/mask'
+VAL_IMG_DIR = r'/home/shaun/python/uni_work/ML_project/input/val_truth'
+VAL_MASK_DIR = r'/home/shaun/python/uni_work/ML_project/input/val_mask'
 
 def train_fn(loader, model, optimiser, loss_fn, scaler):
     loop = tqdm(loader) #progress bar
@@ -98,7 +98,7 @@ def main():
         val_transforms
     )
 
-    scaler = torch.cuda.amp.grad_scaler()
+    scaler = torch.cuda.amp.GradScaler()
     for epoch in range(NUM_EPOCHS):
         train_fn(train_loader, model, optimiser, loss_fn, scaler)
 
@@ -114,7 +114,7 @@ def main():
 
         # print some examples to a folder
         save_predictions_as_imgs(
-            val_loader, model, folder=r"D:\python\uni_work\ML_project\output\saved_images", device=DEVICE
+            val_loader, model, folder=r"/home/shaun/python/uni_work/ML_project/output/saved_images", device=DEVICE
         )
 
 if __name__ == "__main__":
